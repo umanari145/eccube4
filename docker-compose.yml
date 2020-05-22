@@ -54,21 +54,6 @@ services:
     networks:
       - backend
 
-  ### Postgres ################################
-  postdb:
-    image: postgres:9.3
-    container_name: "postdb"
-    environment:
-      - POSTGRES_DB=eccubedb
-      - POSTGRES_USER=dbuser
-      - POSTGRES_PASSWORD=secret
-    ports:
-      - "5432:5432"
-    volumes:
-      - "./var/pgsql/data:/var/lib/postgresql/data"
-    networks:
-      - backend
-
   ### node ################################
   node:
     image: node:8.16.0-alpine
