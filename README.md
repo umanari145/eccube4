@@ -7,7 +7,9 @@
 - `src/Eccube/Form` Formで受け取ったあたいの制御
 - `src/Eccube/Form/Type` 実際のFormの個別のパラメーターの制御など プラダウン値の作成など
 - `src/Repository` いわゆるRepository(SQLの作成など)
+- `src/Entity` テーブルのオブジェクト化(ほぼテーブルと1:1)
 - `src/Resource/template` テンプレート(Twig)
+- `src/Service` サービス(主に複数画面をまたぐビジネスロジック)
 - `html/template` css,jsなどのリソース系ファイル置き場
 
 ## ルーティング && URL
@@ -35,6 +37,8 @@
 ## view側の値のヘルパー処理など
 
  - `src/Eccube/Form/Type`で制御
+
+参考リンク https://qiita.com/yutachaos/items/0ae0d1797db4cb16466c
 
 プルダウン例
 ```
@@ -75,3 +79,18 @@
 ])
 
 ```
+
+
+
+### Service
+
+複数プロセスで使用するビジネスロジック(WMSでいう在庫系など)
+他 共通系の汎用的な処理も
+
+例
+- Cart カートのさらに細分化されたビジネスロジック
+- PurchaseFlow 購入フローの細分化されたビジネスロジック
+- CartService カート系
+- CsvImportService CSV系
+- MailService メール送信系
+- PointHelper ポイント
